@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">Your answer: <%= @user_answer %></div>
+      <div class="card-title">Score: <%= @score %></div>
+      <div class="card-text"><%= @text %></div>
+    </div>
+  </div>
+</div>
+
+<ol class="list-group-flush">
+  <% @high_scores.each do |score| %>
+  <% p score %>
+    <li class="list-group-item"><%= score["name"] %> - <%= score["score"] %></li>
+  <% end %>
+<%= link_to "Play Again", root_path, class:'btn btn-outline-primary my-3' %>
